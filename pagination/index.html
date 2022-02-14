@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pagination</title>
+</head>
+
+<body>
+    <div class="pagination-input">
+        <input type="number" id="total" />
+        <input type="number" id="current-page" />
+        <select id="page-size">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+        <button id="submit-button">submit</button>
+    </div>
+
+    <div class="pagination-preview">
+        <ul class="pagination"></ul>
+    </div>
+
+    <template id="page-prev-temp">
+      <li class="page-prev">
+        <a class="page-link">&#60;</a>
+      </li>
+    </template>
+    <template id="page-next-temp">
+      <li class="page-next">
+        <a class="page-link">&#62;</a>
+      </li>
+    </template>
+    <template id="page-item-temp">
+      <li class="page-item"><a href="" class="page-link"></a></li>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

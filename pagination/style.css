@@ -1,0 +1,29 @@
+
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.pagination {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-item,
+.page-prev,
+.page-next {
+  display: inline-block;
+  text-align: center;
+  height: 32px;
+  min-width: 32px;
+  line-height: 30px;
+  border: 1px solid rgba(68, 58, 58, 0.45);
+  border-radius: 4px;
+  margin-right: 5px;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
