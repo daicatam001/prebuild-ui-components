@@ -8,6 +8,10 @@ const pagePrevTempEl = document.querySelector("#page-prev-temp");
 const pageNextTempEl = document.querySelector("#page-next-temp");
 
 submitButtonEl.addEventListener("click", function() {
+    render();
+});
+
+function render(current = 1) {
     paginationEl.innerHTML = "";
     const total = totalEl.value;
     const pageSize = pageSizeEl.value;
@@ -15,14 +19,22 @@ submitButtonEl.addEventListener("click", function() {
     if (pageCount == 0) {
         return;
     }
-    const pagePrevEl = document.importNode(pagePrevTempEl.content, true);
-    const pageNextEl = document.importNode(pageNextTempEl.content, true);
+    if (current > pageCount) {
+        current = pageCount;
+    }
+    paginationEl.setAttribute("aria-current", current);
+    pagePrevTempEl.content.cloneNode(true);
+    const pagePrevEl = pagePrevTempEl.content.cloneNode();
+    const pageNextEl = pageNextTempEl.content.cloneNode();
 
     paginationEl.appendChild(pagePrevEl);
+    if (current === 1) {
+        console.log(pagePrevEl.firstElementChild);
+    }
     for (let i = 1; i <= pageCount; i++) {
         const pageItem = document.importNode(pageItemTmpEl.content, true);
         pageItem.querySelector("a").innerText = i;
         paginationEl.appendChild(pageItem);
     }
     paginationEl.appendChild(pageNextEl);
-});
+}

@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Pagination</title>
-</head>
+  </head>
 
-<body>
-    <div class="pagination-input">
-        <input type="number" id="total" />
-        <input type="number" id="current-page" />
-        <select id="page-size">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-      </select>
-        <button id="submit-button">submit</button>
+  <body>
+    <div style="display: none">
+      <svg
+        id="ico-chevron-left"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevron-left"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      <svg
+        id="ico-chevron-right"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevron-right"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
     </div>
 
-    <div class="pagination-preview">
-        <ul class="pagination"></ul>
+    <div class="container">
+      <div class="pagination-preview">
+        <ul class="pagination">
+          <div class="pagination__prev">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="#ico-chevron-left"></use>
+            </svg>
+          </div>
+          <div class="pagination__item"><a>1</a></div>
+          <div class="pagination__item active">2</div>
+          <div class="pagination__item">3</div>
+          <div class="pagination__expand">•••</div>
+          <div class="pagination__next">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="#ico-chevron-right"></use>
+            </svg>
+          </div>
+        </ul>
+      </div>
     </div>
-
-    <template id="page-prev-temp">
-      <li class="page-prev">
-        <a class="page-link">&#60;</a>
-      </li>
-    </template>
-    <template id="page-next-temp">
-      <li class="page-next">
-        <a class="page-link">&#62;</a>
-      </li>
-    </template>
-    <template id="page-item-temp">
-      <li class="page-item"><a href="" class="page-link"></a></li>
-    </template>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
